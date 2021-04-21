@@ -1,0 +1,26 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1619038176524,3,HTTP Request,200,OK,Customer Thread Group 1-1,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,3,0,1
+1619038176559,2,HTTP Request,200,OK,Customer Thread Group 1-2,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176599,2,HTTP Request,200,OK,Customer Thread Group 1-3,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176639,2,HTTP Request,200,OK,Customer Thread Group 1-4,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176679,2,HTTP Request,200,OK,Customer Thread Group 1-5,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176719,2,HTTP Request,200,OK,Customer Thread Group 1-6,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176759,2,HTTP Request,200,OK,Customer Thread Group 1-7,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176799,2,HTTP Request,200,OK,Customer Thread Group 1-8,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176839,2,HTTP Request,200,OK,Customer Thread Group 1-9,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176879,2,HTTP Request,200,OK,Customer Thread Group 1-10,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,1
+1619038176919,2,HTTP Request,200,OK,Customer Thread Group 1-11,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,1
+1619038176959,2,HTTP Request,200,OK,Customer Thread Group 1-12,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038176999,2,HTTP Request,200,OK,Customer Thread Group 1-13,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,1
+1619038177039,2,HTTP Request,200,OK,Customer Thread Group 1-14,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,1
+1619038177081,1,HTTP Request,200,OK,Customer Thread Group 1-15,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,1,0,0
+1619038177121,2,HTTP Request,200,OK,Customer Thread Group 1-16,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177160,2,HTTP Request,200,OK,Customer Thread Group 1-17,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177202,2,HTTP Request,200,OK,Customer Thread Group 1-18,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177242,2,HTTP Request,200,OK,Customer Thread Group 1-19,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177282,2,HTTP Request,200,OK,Customer Thread Group 1-20,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177319,2,HTTP Request,200,OK,Customer Thread Group 1-21,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177359,2,HTTP Request,200,OK,Customer Thread Group 1-22,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177400,2,HTTP Request,200,OK,Customer Thread Group 1-23,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177440,2,HTTP Request,200,OK,Customer Thread Group 1-24,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0
+1619038177480,2,HTTP Request,200,OK,Customer Thread Group 1-25,text,true,,10682,15380,1,1,http://localhost:8090/customers/getByDueTimeAsc,2,0,0

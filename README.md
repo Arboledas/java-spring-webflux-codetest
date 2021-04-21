@@ -1,36 +1,76 @@
-# Qudini Backend Software Engineer Code Test
+# Customer REST API with Spring WebFlux
 
-**Please _fork_ this repository rather than creating a PR.**
+The service will run on port 8090. Here some endpoints you can call:
 
-To test how quickly you can pick up a new project and follow requirements, we ask
-candidates to do the following project. You have a choice of web frameworks:
+**- Send Customer list with JSON format [(i.e attached customers.json)](/customers.json) and return it back sorted by `duetime`:**
 
-* Spring WebFlux
-* Spring MVC
+`POST /customers/getByDueTimeAsc`
 
-This repository is the Spring WebFlux test. If you want to use Spring MVC
-instead, fork the this repository instead:
-(https://github.com/qudini/java-spring-mvc-codetest)
+**- Get information about system health and the service itself:**
+
+`GET /actuator/health`
+
+`GET /actuator/info`
+
+(Only those two endpoints are intentionally enabled using Spring Boot Actuator)
+
+---------------
+
+**- Testing with WebFluxTest and WebTestClient:**
+
+Launch the test `testPostAndReadCustomersStatusOk` on the CustomerControllerTest 
+to check that the code works sending a dummy single Customer JSON. 
+
+**- Load Testing with JMeter:**
+
+The API has been tested with some basic thread groups requests using JMeter.  The request body is the [attached customers.json](/customers.json)  
+From lower to greater tests (There is also a folder JMeter with the results in the project)
+
+a) The lowest test:  
+- Number of Threads (users): 25  
+- Ramp-up period (seconds): 1  
+- Loop Count: 1  
+
+|Label       |# Samples|Average|Min|Max|Std. Dev.|Error %|Throughput|Received KB/sec|Sent KB/sec|Avg. Bytes|
+|------------|---------|-------|---|---|---------|-------|----------|---------------|-----------|----------|
+|HTTP Request|25       |1      |1  |3  |0,39     |0,000% |26,12330  |272,51         |392,36     |10682,0   |
+|TOTAL       |25       |1      |1  |3  |0,39     |0,000% |26,12330  |272,51         |392,36     |10682,0   |
+
+b) Lower test:
+- Number of Threads (users): 100
+- Ramp-up period (seconds): 3
+- Loop Count: 2
+
+|Label       |# Samples|Average|Min|Max|Std. Dev.|Error %|Throughput|Received KB/sec|Sent KB/sec|Avg. Bytes|
+|------------|---------|-------|---|---|---------|-------|----------|---------------|-----------|----------|
+|HTTP Request|200      |1      |1  |4  |0,54     |0,000% |67,38544  |702,94         |1012,10    |10682,0   |
+|TOTAL       |200      |1      |1  |4  |0,54     |0,000% |67,38544  |702,94         |1012,10    |10682,0   |
+
+c) Greater test:
+- Number of Threads (users): 250
+- Ramp-up period (seconds): 3
+- Loop Count: 4
+
+|Label       |# Samples|Average|Min|Max|Std. Dev.|Error %|Throughput|Received KB/sec|Sent KB/sec|Avg. Bytes|
+|------------|---------|-------|---|---|---------|-------|----------|---------------|-----------|----------|
+|HTTP Request|1000     |1      |0  |6  |0,55     |0,000% |334,67202 |3491,18        |5026,62    |10682,0   |
+|TOTAL       |1000     |1      |0  |6  |0,55     |0,000% |334,67202 |3491,18        |5026,62    |10682,0   |
 
 
-Meet the following requirements:
+d) The greatest test:   
+- Number of Threads (users): 500  
+- Ramp-up period (seconds): 5  
+- Loop Count: 5
 
-* Fork this project.
-* Start project in the chosen framework.
-* Provide an API which accepts a list of JSON `Customer` objects in the body of
-  a POST request (see the JSON example attached). You can create this request
-  via whatever tool you prefer, whether it's curl, Postman, a Spring webclient,
-  or something else.
-* The API should take this list of objects and sort them by `duetime` from
-  oldest to newest and return it back as a sorted JSON array.
-* Use Java 8's `datetime` package or Joda time (http://www.joda.org/joda-time/)
-  library to handle times with timezones.
-* The API should be non-blocking and be as efficient as possible in its sorting.
-* We'll test this by load testing the project with a few hundred users to see
-  how it performs. (If you have time try using JMeter to test your
-  implementation.)
+|Label       |# Samples|Average|Min|Max|Std. Dev.|Error %|Throughput|Received KB/sec|Sent KB/sec|Avg. Bytes|
+|------------|---------|-------|---|---|---------|-------|----------|---------------|-----------|----------|
+|HTTP Request|2500     |1      |0  |6  |0,53     |0,000% |501,00200 |5226,27        |7524,82    |10682,0   |
+|TOTAL       |2500     |1      |0  |6  |0,53     |0,000% |501,00200 |5226,27        |7524,82    |10682,0   |
 
-Bonus point:
-* Add some tests to ensure your code works as expected. Is it better to test the
-  controller or test the service layer directly? Either approach is valid so
-  long as you can justify it.
+
+---------------
+  
+**Bonus point answer/conclusion**  
+I don't think there is one better than the other, as far I know:
+- Testing controller: Maybe I am wrong, but you test it as a Web Application, using a Spring Context. (Integration Test)
+- Testing service directly: You need something like Mockito, and then you are not using a Spring Context. (Unit test)
