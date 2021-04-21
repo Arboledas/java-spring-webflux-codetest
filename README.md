@@ -24,7 +24,7 @@ to check that the code works sending a dummy single Customer JSON.
 **- Load Testing with JMeter:**
 
 The API has been tested with some basic thread groups requests using JMeter.  The request body is the [attached customers.json](/customers.json)  
-From lower to greater tests (There is also a folder JMeter with the results in the project)
+From lower to greater tests (There is also a folder named "jmeter" with the results in the project)
 
 a) The lowest test:  
 - Number of Threads (users): 25  
